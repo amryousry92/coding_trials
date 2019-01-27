@@ -18,7 +18,7 @@ public class TraversalsToTree {
 
     private static int preIndex = 1;
 
-    private static Node buildeTree(Map<Integer, Character> preOrder, Map<Character, Integer> inOrder,
+    private static Node buildTree(Map<Integer, Character> preOrder, Map<Character, Integer> inOrder,
         int inStart, int inEnd) {
         if (inStart > inEnd) {
             return null;
@@ -28,14 +28,14 @@ public class TraversalsToTree {
         if (inStart == inEnd) {
             return node;
         }
-        node.left = buildeTree(preOrder, inOrder, inStart, inOrder.get(currentChar) - 1);
-        node.right = buildeTree(preOrder, inOrder, inOrder.get(currentChar) + 1, inEnd);
+        node.left = buildTree(preOrder, inOrder, inStart, inOrder.get(currentChar) - 1);
+        node.right = buildTree(preOrder, inOrder, inOrder.get(currentChar) + 1, inEnd);
 
         return node;
     }
 
     private static void inOrderTraversal(Node root) {
-        if(root == null){
+        if (root == null) {
             return;
         }
         if (root.left != null) {
@@ -48,7 +48,7 @@ public class TraversalsToTree {
     }
 
     private static void postOrderTraversal(Node root) {
-        if(root == null){
+        if (root == null) {
             return;
         }
         if (root.left != null) {
@@ -61,7 +61,7 @@ public class TraversalsToTree {
     }
 
     private static void preOrderTraversal(Node root) {
-        if(root == null){
+        if (root == null) {
             return;
         }
         System.out.print(root.data + " ");
@@ -96,7 +96,7 @@ public class TraversalsToTree {
         preOrder.put(8, 'G');
         preOrder.put(9, 'K');
 
-        final Node tree = buildeTree(preOrder, inOrder, 1, 9);
+        final Node tree = buildTree(preOrder, inOrder, 1, 9);
         System.out.println("PreOrder: ");
         preOrderTraversal(tree);
         System.out.println();
