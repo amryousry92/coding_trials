@@ -1,6 +1,5 @@
 package coding.practice;
 
-import java.util.Comparator;
 import java.util.PriorityQueue;
 
 public class SmallestKthElement {

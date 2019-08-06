@@ -28,22 +28,6 @@ public class MaxProfit {
         return difference;
     }
 
-    private static int maxProfitKTransactions2(int[] array, int k) {
-        if (array == null || array.length <= 1 || k == 0) {
-            return 0;
-        }
-
-        int[] diffArray = new int[k];
-        int counter = 0;
-        int min = array[0];
-        int max = array[0];
-        for (int i = 1; i < array.length; i++) {
-
-        }
-        int difference = 0;
-        return difference;
-    }
-
     private static int maxProfitKTransactions(int[] array, int k) {
         LocalValue[] maxValues = new LocalValue[k];
         int counter = 0;
